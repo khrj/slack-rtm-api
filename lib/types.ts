@@ -11,3 +11,9 @@ export interface RTMClientOptions {
   serverPongTimeout?: number;
   replyAckOnReconnectTimeout?: number;
 }
+
+
+export type Events = {
+
+
+}

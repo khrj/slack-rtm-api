@@ -16,11 +16,7 @@ export class RTMClient extends TypedEventTarget<Events> {
   }: RTMClientOptions = {}) {
     super();
 
+
+
   }
 }
-
-//   autoReconnect?: boolean;
-//   useRtmConnect?: boolean;
-//   clientPingTimeout?: number;
-//   serverPongTimeout?: number;
-//   replyAckOnReconnectTimeout?: number;
