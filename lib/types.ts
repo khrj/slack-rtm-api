@@ -2,6 +2,7 @@
  * Exported types
  *
  */
+import type { Logger, LogLevel } from "../deps.ts";
 
 export interface RTMClientOptions {
   slackApiUrl?: string;
@@ -10,10 +11,6 @@ export interface RTMClientOptions {
   clientPingTimeout?: number;
   serverPongTimeout?: number;
   replyAckOnReconnectTimeout?: number;
-}
-
-
-export type Events = {
-
-
+  logger?: Logger;
+  logLevel?: LogLevel;
 }
