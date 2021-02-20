@@ -1,6 +1,6 @@
 <div align="center">
     <img src="assets/logo.svg" width="400" height="400" alt="blueprint illustration">
-    <h1>[WIP] Real Time Messaging API</h1>
+    <h1>[WIP] Slack Real Time Messaging API</h1>
     <p>
         <b>Connect to the Slack platform over a persistent Websocket connection. Deno port of <a href="https://www.npmjs.com/package/@slack/rtm-api">@slack/rtm-api</a></b>
     </p>
