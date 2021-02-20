@@ -6,13 +6,13 @@ type Events = {
 };
 
 export class RTMClient extends TypedEventTarget<Events> {
-  private webClient: WebClient;
+  #webClient: WebClient;
 
   constructor(token: string, {
     slackApiUrl = "https://slack.com/api/",
     logger = undefined,
     logLevel = LogLevel.INFO,
-    // retryConfig,
+    retryConfig,
     autoReconnect = true,
     useRtmConnect = true,
     clientPingTimeout,
@@ -20,9 +20,12 @@ export class RTMClient extends TypedEventTarget<Events> {
     replyAckOnReconnectTimeout = 2000,
   }: RTMClientOptions = {}) {
     super();
-    this.webClient = new WebClient(token, {
+    this.#webClient = new WebClient(token, {
       slackApiUrl,
       logger,
+      logLevel,
+      retryConfig,
+      maxRequestConcurrency: 1,
     });
   }
 }

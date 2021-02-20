@@ -1,8 +1,5 @@
-/**
- * Exported types
- *
- */
 import type { Logger, LogLevel } from "../deps.ts";
+import type { RetryOptions } from "./retry-polocies.ts";
 
 export interface RTMClientOptions {
   slackApiUrl?: string;
@@ -13,4 +10,5 @@ export interface RTMClientOptions {
   replyAckOnReconnectTimeout?: number;
   logger?: Logger;
   logLevel?: LogLevel;
+  retryConfig?: RetryOptions;
 }
