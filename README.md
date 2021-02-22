@@ -23,7 +23,7 @@
 ## Usage
 
 ```ts
-import {} from 'https://deno.land/x/slack_rtm_api@0.0.2/mod.ts'
+import {} from "https://deno.land/x/slack_rtm_api@0.0.2/mod.ts";
 ```
 
 ## Supporters

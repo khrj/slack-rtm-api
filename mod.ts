@@ -1,2 +1,1 @@
-import {} from "./deps.ts"
-console.log("Hello world")
+export { RTMClient } from "./lib/RTMClient.ts";
