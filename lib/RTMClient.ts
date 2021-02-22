@@ -1,5 +1,8 @@
 import { LogLevel, TypedEventTarget, WebClient } from "../deps.ts";
 import { RTMClientOptions } from "./types.ts";
+import { WebSocket } from "../deps.ts";
+// import Finity from "https://deno.land/x/finity@1.0.2/mod.js";
+// import StateMachine from "https://deno.land/x/finity@1.0.2/src/core/StateMachine.js";
 
 type Events = {
   message: string;
@@ -8,6 +11,8 @@ type Events = {
 export class RTMClient extends TypedEventTarget<Events> {
   #webClient: WebClient;
   #autoReconnect: boolean;
+
+  public connected: boolean = false;
 
   /**
    * Whether or not the client is currently connected to the RTM API
@@ -24,6 +29,8 @@ export class RTMClient extends TypedEventTarget<Events> {
    * The user ID for the connected client.
    */
   public activeUserId?: string;
+
+  // private stateMachine: StateMachine;
 
   /**
    * The team ID for the workspace the client is connected to.
@@ -49,6 +56,11 @@ export class RTMClient extends TypedEventTarget<Events> {
    * Use the `rtm.connect` method to connect when true, or the `rtm.start` method when false
    */
   #useRtmConnect: boolean;
+
+  /**
+   * The client's websocket
+   */
+  #websocket?: WebSocket;
 
   /**
    * The number of milliseconds to wait upon connection for reply messages from the previous connection. The default
@@ -85,5 +97,10 @@ export class RTMClient extends TypedEventTarget<Events> {
     this.#autoReconnect = autoReconnect;
     this.#useRtmConnect = useRtmConnect;
     this.#replyAckOnReconnectTimeout = replyAckOnReconnectTimeout;
+  }
+
+  private setupWebSocket(url: string) {
+    this.#websocket = new WebSocket(url);
+    // this.#websocket.addListener("open",event => this)
   }
 }

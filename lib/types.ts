@@ -12,3 +12,7 @@ export interface RTMClientOptions {
   logLevel?: LogLevel;
   retryConfig?: RetryOptions;
 }
+
+export type Events = {
+  delete: string;
+};

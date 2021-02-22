@@ -1,4 +1,6 @@
 import { ConsoleLogger, Logger, LogLevel } from "../deps.ts";
+export { LogLevel } from "../deps.ts";
+export type { Logger } from "../deps.ts";
 
 let instanceCount = 0;
 

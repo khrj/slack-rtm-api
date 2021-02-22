@@ -14,3 +14,8 @@ export {
 export { WebClient } from "https://deno.land/x/slack_web_api@1.0.2/mod.ts";
 
 export type { InputOptions } from "https://deno.land/x/p_retried@1.0.6/mod.ts";
+
+export {
+  WebSocket,
+  WebSocketServer,
+} from "https://deno.land/x/websocket@v0.0.6/mod.ts";
